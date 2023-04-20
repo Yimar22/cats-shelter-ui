@@ -1,6 +1,7 @@
 import { Pact } from '@pact-foundation/pact';
 import path from 'path';
 
+
 const consumerName = 'CatShelterFront';
 const providerName = 'CatShelterBack';
 
