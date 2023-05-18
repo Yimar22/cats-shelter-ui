@@ -1,41 +1,36 @@
 import axios from 'axios';
-
+export const axiosInstance = axios.create({baseURL: process.env.API});
 export const AnimalController = {
+
     register(animal) {
-        return axios({
+        return axiosInstance.request({
             method: 'POST',
-            baseURL: process.env.API,
-            url: `animals`,
+            url: 'animals',
             data: animal,
         })
     },
     list() {
-        return axios({
+        return axiosInstance.request({
             method: 'GET',
-            baseURL: process.env.API,
             url: 'animals'
         });
     },
     delete(name) {
-        return axios({
+        return axiosInstance.request({
             method: 'DELETE',
-            baseURL: process.env.API,
             url: `animals/${name}`,
         });
     },
     getAnimal(name) {
-        return axios({
+        return axiosInstance.request({
             method: 'GET',
-            baseURL: process.env.API,
             url: `animals/${name}`,
         });
     },
     updateAnimal(name) {
-        return axios({
+        return axiosInstance.request({
             method: 'PUT',
-            baseURL: process.env.API,
             url: `animals/${name}`,
         });
     }
 }
-
