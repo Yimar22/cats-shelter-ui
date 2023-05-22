@@ -9,7 +9,6 @@
     "start": "next start",
     "lint": "next lint",
     "test:component:open": "cypress open",
-    "publish:contract": "node ./test/contract/config/publish.js",
     "test:contract": "mocha test/contract/**/*.test.js -r dotenv/config",
     "test:unit": "mocha test/unit/**/*.test.js"
 
