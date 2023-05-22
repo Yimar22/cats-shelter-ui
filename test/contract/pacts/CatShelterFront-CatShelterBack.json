@@ -209,6 +209,62 @@
         },
         "status": 200
       }
+    },
+    {
+      "description": "a request to delete a cat",
+      "providerState": "has animals to delete",
+      "request": {
+        "matchingRules": {
+          "$.path": {
+            "match": "type"
+          }
+        },
+        "method": "DELETE",
+        "path": "/animals/{name}"
+      },
+      "response": {
+        "status": 204
+      }
+    },
+    {
+      "description": "a request to list all cats",
+      "providerState": "has animals to get",
+      "request": {
+        "method": "GET",
+        "path": "/animals"
+      },
+      "response": {
+        "body": [
+          {
+            "breed": "Bengali",
+            "gender": "Female",
+            "name": "Manchas",
+            "vaccinated": true
+          }
+        ],
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "matchingRules": {
+          "$.body": {
+            "match": "type",
+            "min": 1
+          },
+          "$.body[*].breed": {
+            "match": "type"
+          },
+          "$.body[*].gender": {
+            "match": "type"
+          },
+          "$.body[*].name": {
+            "match": "type"
+          },
+          "$.body[*].vaccinated": {
+            "match": "type"
+          }
+        },
+        "status": 200
+      }
     }
 
   ],
