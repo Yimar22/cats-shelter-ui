@@ -143,6 +143,72 @@
         },
         "status": 200
       }
+    },
+    {
+      "description": "a request to update a cat",
+      "providerState": "has animal to update",
+      "request": {
+        "body": {
+          "breed": "Bengali",
+          "gender": "Female",
+          "name": "Manchas",
+          "vaccinated": true
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "matchingRules": {
+          "$.body": {
+            "match": "type"
+          },
+          "$.body.breed": {
+            "match": "type"
+          },
+          "$.body.gender": {
+            "match": "type"
+          },
+          "$.body.name": {
+            "match": "type"
+          },
+          "$.body.vaccinated": {
+            "match": "type"
+          },
+          "$.path": {
+            "match": "type"
+          }
+        },
+        "method": "PUT",
+        "path": "/animals/{name}"
+      },
+      "response": {
+        "body": {
+          "breed": "Bengali",
+          "gender": "Female",
+          "name": "Manchas",
+          "vaccinated": true
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "matchingRules": {
+          "$.body": {
+            "match": "type"
+          },
+          "$.body.breed": {
+            "match": "type"
+          },
+          "$.body.gender": {
+            "match": "type"
+          },
+          "$.body.name": {
+            "match": "type"
+          },
+          "$.body.vaccinated": {
+            "match": "type"
+          }
+        },
+        "status": 200
+      }
     }
 
   ],
